@@ -1,0 +1,1223 @@
+{
+    "Invoice": {
+        "purchaseOrderRefs": {
+            "label": "PO #",
+            "displayConfig": {
+                "customHtml": "{{ $ctrl.item.newValue.additionalDetails.documentNumber || $ctrl.item.oldValue.additionalDetails.documentNumber }}"
+            },
+            "groupKey": "PoReference",
+            "isHidden": true,
+            "order": 0
+        },
+        "finalInvoice": {
+            "label": "Final Invoice",
+            "groupKey": "Overview",
+            "displayConfig": {
+                "customHtml": "{{ ($ctrl.item[$ctrl.valueKey] ? \"common.label.yes\" : \"common.label.no\") | translate }}"
+            },
+            "order": 1
+        },
+        "supplierName": {
+            "label": "Supplier",
+            "groupKey": "Overview",
+            "order": 2
+        },
+        "supplierAccountNumber": {
+            "label": "Supplier Account #",
+            "groupKey": "Overview",
+            "order": 3
+        },
+        "vendorInvoiceNumber": {
+            "label": "Supplier Invoice #",
+            "groupKey": "Overview",
+            "order": 4
+        },
+        "invoiceDate": {
+            "label": "Invoice Date",
+            "pipe": "vrooDate",
+            "groupKey": "Overview",
+            "order": 5
+        },
+        "paymentTerms": {
+            "label": "Payment Terms",
+            "groupKey": "Overview",
+            "order": 6
+        },
+        "paymentDueDate": {
+            "label": "Payment Due Date",
+            "pipe": "vrooDate",
+            "groupKey": "Overview",
+            "order": 7
+        },
+        "postingDate": {
+            "label": "Posted Date",
+            "groupKey": "Overview",
+            "pipe": "vrooDate",
+            "order": 8
+        },
+        "comments": {
+            "label": "Notes About Invoice",
+            "groupKey": "Overview",
+            "order": 9
+        },
+        "requestorName": {
+            "label": "Requester Name",
+            "groupKey": "Overview",
+            "order": 10
+        },
+        "requestorEmail": {
+            "label": "Requester Email",
+            "groupKey": "Overview",
+            "order": 11
+        },
+        "requestorContact": {
+            "label": "Requester Contact",
+            "groupKey": "Overview",
+            "order": 12
+        },
+        "supplierEmail": {
+            "label": "Supplier Email",
+            "groupKey": "Overview",
+            "order": 13
+        },
+        "currency": {
+            "label": "Currency",
+            "groupKey": "Overview",
+            "order": 14
+        },
+        "invoiceCurrency": {
+            "label": "Currency",
+            "groupKey": "Overview",
+            "order": 15
+        },
+        "subTotal": {
+            "label": "Subtotal",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 16
+        },
+        "discountType": {
+            "label": "Discount Type",
+            "groupKey": "Totals",
+            "displayConfig": {
+                "customHtml": "{{ (\"common.labels.enum:ValueTypes.\" + $ctrl.item[$ctrl.valueKey]) | translate }}"
+            },
+            "order": 17
+        },
+        "discountPercentOrValue": {
+            "label": "Discount",
+            "groupKey": "Totals",
+            "displayConfig": {},
+            "order": 18
+        },
+        "userShippingCharges": {
+            "label": "Shipping Charges",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 19
+        },
+        "supplierTaxAmount": {
+            "label": "Supplier Charged Tax",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 20
+        },
+        "taxAmount": {
+            "label": "Tax",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 21
+        },
+        "useTaxTotal": {
+            "label": "Use Tax",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 22
+        },
+        "userTotalAmount": {
+            "label": "Total Amount",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 23
+        },
+        "userTotalWithUseTax": {
+            "label": "Invoice Total With Use Tax",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 24
+        },
+        "items": {
+            "label": "Items",
+            "groupKey": "Items",
+            "isHidden": true,
+            "order": 25
+        },
+        "lineItemType": {
+            "label": "Type",
+            "groupKey": "Items",
+            "pipe": "mapTranslation:'line-item-type'",
+            "order": 26
+        },
+        "description": {
+            "label": "Description",
+            "groupKey": "Items",
+            "order": 27
+        },
+        "unitPrice": {
+            "label": "Price",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 28
+        },
+        "quantity": {
+            "label": "Quantity",
+            "groupKey": "Items",
+            "order": 29
+        },
+        "category": {
+            "label": "Category",
+            "groupKey": "Items",
+            "order": 30
+        },
+        "taxCodeLabel": {
+            "label": "Tax Code",
+            "groupKey": "Items",
+            "order": 31
+        },
+        "taxDetails": {
+            "displayConfig": {
+                "field": "externalTaxCode"
+            },
+            "label": "External Tax Code",
+            "groupKey": "Items",
+            "order": 32
+        },
+        "cashDiscount": {
+            "label": "Discount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 33
+        },
+        "shippingCharges": {
+            "label": "Shipping Charges",
+            "isCurrency": true,
+            "groupKey": "Items",
+            "order": 34
+        },
+        "supplierTax": {
+            "label": "Supplier Charged Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 35
+        },
+        "tax": {
+            "label": "Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 36
+        },
+        "calculatedTax": {
+            "label": "Calculated Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 37
+        },
+        "useTax": {
+            "label": "Use Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 38
+        },
+        "unitOfMeasure": {
+            "label": "UoM",
+            "groupKey": "Items",
+            "order": 39
+        },
+        "companyCodeRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Company Code",
+            "groupKey": "Items",
+            "order": 40
+        },
+        "plantCodeLabel": {
+            "label": "Plant",
+            "groupKey": "Items",
+            "order": 41
+        },
+        "splitAccountAssignment": {
+            "label": "Split Account Assignment",
+            "pipe": "mapTranslation:'enums.SplitAccountAssignmentTypes'",
+            "groupKey": "Items",
+            "order": 42
+        },
+        "accountInfo": {
+            "label": "Distribution",
+            "isHidden": true,
+            "groupKey": "Items",
+            "order": 43
+        },
+        "totalAmount": {
+            "label": "Split Value",
+            "groupKey": "Items",
+            "displayConfig": {},
+            "order": 44
+        },
+        "distributedDiscountAmount": {
+            "label": "Dist. Discount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 45
+        },
+        "distributedShippingCharges": {
+            "label": "Dist. Shipping Charges",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 46
+        },
+        "distributedTax": {
+            "label": "Dist. Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 47
+        },
+        "distributedSupplierTax": {
+            "label": "Dist. Supplier Charged Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 48
+        },
+        "distributedUseTax": {
+            "label": "Dist. Use Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 49
+        },
+        "distributedAmount": {
+            "label": "Dist. Amount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 50
+        },
+        "distributedTotalAmount": {
+            "label": "Dist. Net Amount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 51
+        },
+        "accountCategoryTypeSelected": {
+            "label": "Account Category",
+            "groupKey": "Items",
+            "pipe": "mapTranslation:'enums.AccountCategoryTypes'",
+            "order": 52
+        },
+        "accountCategoryValueLabel": {
+            "label": "Cost Object",
+            "groupKey": "Items",
+            "order": 53
+        },
+        "glCodeLabel": {
+            "label": "GL Code",
+            "groupKey": "Items",
+            "order": 54
+        },
+        "projectRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Project",
+            "groupKey": "Items",
+            "order": 55
+        },
+        "customerReferenceLabel": {
+            "label": "Customer",
+            "groupKey": "Items",
+            "order": 56
+        },
+        "locationTypeRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Location Type",
+            "groupKey": "Items",
+            "order": 57
+        },
+        "locationRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Location",
+            "groupKey": "Items",
+            "order": 58
+        },
+        "classRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Class",
+            "groupKey": "Items",
+            "order": 59
+        }
+    },
+    "Memo": {
+        "memoType": {
+            "label": "Memo Type",
+            "groupKey": "Overview",
+            "displayConfig": {
+                "customHtml": "{{ (\"enums.MemoDocumentTypes.\" + $ctrl.item[$ctrl.valueKey]) | translate }}"
+            },
+            "order": 0
+        },
+        "invoiceNumber": {
+            "label": "Original Invoice #",
+            "groupKey": "Overview",
+            "order": 1
+        },
+        "purchaseOrderNumber": {
+            "label": "Original PO #",
+            "groupKey": "Overview",
+            "order": 2
+        },
+        "poReInvoicingType": {
+            "label": "Are the PO line-items expected to be re-invoiced?",
+            "groupKey": "Overview",
+            "displayConfig": {
+                "customHtml": "{{ (\"enums.PurchaseOrderReInvoicingType.\" + $ctrl.item[$ctrl.valueKey] + \".short_label\") | translate }}"
+            },
+            "order": 3
+        },
+        "supplierName": {
+            "label": "Supplier",
+            "groupKey": "Overview",
+            "order": 4
+        },
+        "vendorMemoNumber": {
+            "label": "Supplier Memo #",
+            "groupKey": "Overview",
+            "order": 5
+        },
+        "memoDate": {
+            "label": "Memo Date",
+            "groupKey": "Overview",
+            "pipe": "vrooDate",
+            "order": 6
+        },
+        "postingDate": {
+            "label": "Posted Date",
+            "groupKey": "Overview",
+            "pipe": "vrooDate",
+            "order": 7
+        },
+        "reason": {
+            "label": "Reason",
+            "pipe": "mapTranslation:'enums.MemoReasons'",
+            "groupKey": "Overview",
+            "order": 8
+        },
+        "otherReasonDescription": {
+            "label": "Other Reason Description",
+            "groupKey": "Overview",
+            "order": 9
+        },
+        "comments": {
+            "label": "Notes",
+            "groupKey": "Overview",
+            "order": 10
+        },
+        "currency": {
+            "label": "Currency",
+            "groupKey": "Overview",
+            "order": 11
+        },
+        "subTotal": {
+            "label": "Subtotal",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 12
+        },
+        "discountType": {
+            "label": "Discount Type",
+            "groupKey": "Totals",
+            "displayConfig": {
+                "customHtml": "{{ (\"common.labels.enum:ValueTypes.\" + $ctrl.item[$ctrl.valueKey]) | translate }}"
+            },
+            "order": 13
+        },
+        "discountPercentOrValue": {
+            "label": "Discount",
+            "groupKey": "Totals",
+            "displayConfig": {},
+            "order": 14
+        },
+        "userShippingCharges": {
+            "label": "Shipping Charges",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 15
+        },
+        "userTaxAmount": {
+            "label": "Tax",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 16
+        },
+        "useTaxTotal": {
+            "label": "Use Tax",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 17
+        },
+        "userTotalAmount": {
+            "label": "Total Amount",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 18
+        },
+        "userTotalWithUseTax": {
+            "label": "Memo Total With Use Tax",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 19
+        },
+        "items": {
+            "label": "Items",
+            "groupKey": "Items",
+            "isHidden": true,
+            "order": 20
+        },
+        "lineItemType": {
+            "label": "Type",
+            "groupKey": "Items",
+            "pipe": "mapTranslation:'line-item-type'",
+            "order": 21
+        },
+        "description": {
+            "label": "Description",
+            "groupKey": "Items",
+            "order": 22
+        },
+        "unitPrice": {
+            "label": "Price",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 23
+        },
+        "quantity": {
+            "label": "Quantity",
+            "groupKey": "Items",
+            "order": 24
+        },
+        "category": {
+            "label": "Category",
+            "groupKey": "Items",
+            "order": 25
+        },
+        "taxCodeLabel": {
+            "label": "Tax Code",
+            "groupKey": "Items",
+            "order": 26
+        },
+        "cashDiscount": {
+            "label": "Discount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 27
+        },
+        "shippingCharges": {
+            "label": "Shipping Charges",
+            "isCurrency": true,
+            "groupKey": "Items",
+            "order": 28
+        },
+        "supplierTax": {
+            "label": "Supplier Charged Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 29
+        },
+        "calculatedTax": {
+            "label": "Calculated Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 30
+        },
+        "unitOfMeasure": {
+            "label": "UoM",
+            "groupKey": "Items",
+            "order": 31
+        },
+        "companyCodeRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Company Code",
+            "groupKey": "Items",
+            "order": 32
+        },
+        "plantCodeLabel": {
+            "label": "Plant",
+            "groupKey": "Items",
+            "order": 33
+        },
+        "splitAccountAssignment": {
+            "label": "Split Account Assignment",
+            "pipe": "mapTranslation:'enums.SplitAccountAssignmentTypes'",
+            "groupKey": "Items",
+            "order": 42
+        },
+        "accountInfo": {
+            "label": "Distribution",
+            "isHidden": true,
+            "groupKey": "Items",
+            "order": 43
+        },
+        "totalAmount": {
+            "label": "Split Value",
+            "groupKey": "Items",
+            "displayConfig": {},
+            "order": 44
+        },
+        "distributedDiscountAmount": {
+            "label": "Dist. Discount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 45
+        },
+        "distributedShippingCharges": {
+            "label": "Dist. Shipping Charges",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 46
+        },
+        "distributedTax": {
+            "label": "Dist. Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 47
+        },
+        "distributedSupplierTax": {
+            "label": "Dist. Supplier Charged Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 48
+        },
+        "distributedUseTax": {
+            "label": "Dist. Use Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 49
+        },
+        "distributedAmount": {
+            "label": "Dist. Amount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 50
+        },
+        "distributedTotalAmount": {
+            "label": "Dist. Net Amount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 51
+        },
+        "accountCategoryTypeSelected": {
+            "label": "Account Category",
+            "groupKey": "Items",
+            "pipe": "mapTranslation:'enums.AccountCategoryTypes'",
+            "order": 52
+        },
+        "accountCategoryValueLabel": {
+            "label": "Cost Object",
+            "groupKey": "Items",
+            "order": 53
+        },
+        "glCodeLabel": {
+            "label": "GL Code",
+            "groupKey": "Items",
+            "order": 54
+        },
+        "projectRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Project",
+            "groupKey": "Items",
+            "order": 55
+        },
+        "customerReferenceLabel": {
+            "label": "Customer",
+            "groupKey": "Items",
+            "order": 56
+        },
+        "locationTypeRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Location Type",
+            "groupKey": "Items",
+            "order": 57
+        },
+        "locationRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Branch",
+            "groupKey": "Items",
+            "order": 58
+        },
+        "classRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Agent",
+            "groupKey": "Items",
+            "order": 59
+        }
+    },
+    "Payment Request": {
+        "documentName": {
+            "label": "Request Name",
+            "groupKey": "Overview",
+            "order": 0
+        },
+        "reason": {
+            "label": "Reason",
+            "groupKey": "Overview",
+            "order": 1
+        },
+        "supplierName": {
+            "label": "Supplier",
+            "groupKey": "Overview",
+            "order": 2
+        },
+        "paymentMethod": {
+            "label": "Payment Method",
+            "pipe": "mapTranslation:'enums.PaymentMethods'",
+            "groupKey": "Overview",
+            "order": 3
+        },
+        "specialHandling": {
+            "label": "Special Handling",
+            "pipe": "mapTranslation:'enums.SpecialHandlingOptions'",
+            "groupKey": "Overview",
+            "order": 4
+        },
+        "mailingAddress": {
+            "displayConfig": {
+                "field": "addressName"
+            },
+            "label": "Mailing Address",
+            "groupKey": "Overview",
+            "order": 5
+        },
+        "documentDate": {
+            "label": "Payment Baseline Date",
+            "pipe": "vrooDate",
+            "groupKey": "Overview",
+            "order": 6
+        },
+        "paymentTerms": {
+            "label": "Payment Terms",
+            "groupKey": "Overview",
+            "order": 7
+        },
+        "paymentDueDate": {
+            "label": "Payment Due Date",
+            "pipe": "vrooDate",
+            "groupKey": "Overview",
+            "order": 8
+        },
+        "comments": {
+            "label": "Additional Instructions / Notes",
+            "groupKey": "Overview",
+            "order": 9
+        },
+        "subTotal": {
+            "label": "Subtotal",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 10
+        },
+        "discountType": {
+            "label": "Discount Type",
+            "groupKey": "Totals",
+            "displayConfig": {
+                "customHtml": "{{ (\"common.labels.enum:ValueTypes.\" + $ctrl.item[$ctrl.valueKey]) | translate }}"
+            },
+            "order": 11
+        },
+        "discountPercentOrValue": {
+            "label": "Discount",
+            "groupKey": "Totals",
+            "displayConfig": {},
+            "order": 12
+        },
+        "userShippingCharges": {
+            "label": "Shipping Charges",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 13
+        },
+        "userTaxAmount": {
+            "label": "Tax",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 14
+        },
+        "userTotalAmount": {
+            "label": "Total Amount",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 15
+        },
+        "items": {
+            "label": "Items",
+            "groupKey": "Items",
+            "isHidden": true,
+            "order": 16
+        },
+        "description": {
+            "label": "Description",
+            "groupKey": "Items",
+            "order": 17
+        },
+        "unitPrice": {
+            "label": "Price",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 18
+        },
+        "quantity": {
+            "label": "Quantity",
+            "groupKey": "Items",
+            "order": 19
+        },
+        "category": {
+            "label": "Category",
+            "groupKey": "Items",
+            "order": 20
+        },
+        "shippingCharges": {
+            "label": "Shipping Charges",
+            "isCurrency": true,
+            "groupKey": "Items",
+            "order": 21
+        },
+        "supplierTax": {
+            "label": "Supplier Charged Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 22
+        },
+        "unitOfMeasure": {
+            "label": "UoM",
+            "groupKey": "Items",
+            "order": 23
+        },
+        "companyCodeRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Company Code",
+            "groupKey": "Items",
+            "order": 24
+        },
+        "plantCodeLabel": {
+            "label": "Plant",
+            "groupKey": "Items",
+            "order": 25
+        },
+        "splitAccountAssignment": {
+            "label": "Split Account Assignment",
+            "pipe": "mapTranslation:'enums.SplitAccountAssignmentTypes'",
+            "groupKey": "Items",
+            "order": 42
+        },
+        "accountInfo": {
+            "label": "Distribution",
+            "isHidden": true,
+            "groupKey": "Items",
+            "order": 43
+        },
+        "totalAmount": {
+            "label": "Split Value",
+            "groupKey": "Items",
+            "displayConfig": {},
+            "order": 44
+        },
+        "distributedDiscountAmount": {
+            "label": "Dist. Discount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 45
+        },
+        "distributedShippingCharges": {
+            "label": "Dist. Shipping Charges",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 46
+        },
+        "distributedTax": {
+            "label": "Dist. Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 47
+        },
+        "distributedSupplierTax": {
+            "label": "Dist. Supplier Charged Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 48
+        },
+        "distributedUseTax": {
+            "label": "Dist. Use Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 49
+        },
+        "distributedAmount": {
+            "label": "Dist. Amount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 50
+        },
+        "distributedTotalAmount": {
+            "label": "Dist. Net Amount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 51
+        },
+        "accountCategoryTypeSelected": {
+            "label": "Account Category",
+            "groupKey": "Items",
+            "pipe": "mapTranslation:'enums.AccountCategoryTypes'",
+            "order": 52
+        },
+        "accountCategoryValueLabel": {
+            "label": "Cost Object",
+            "groupKey": "Items",
+            "order": 53
+        },
+        "glCodeLabel": {
+            "label": "GL Code",
+            "groupKey": "Items",
+            "order": 54
+        },
+        "projectRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Project",
+            "groupKey": "Items",
+            "order": 55
+        },
+        "customerReferenceLabel": {
+            "label": "Customer",
+            "groupKey": "Items",
+            "order": 56
+        },
+        "locationTypeRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Location Type",
+            "groupKey": "Items",
+            "order": 57
+        },
+        "locationRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Branch",
+            "groupKey": "Items",
+            "order": 58
+        },
+        "classRef": {
+            "displayConfig": {
+                "field": "label"
+            },
+            "label": "Agent",
+            "groupKey": "Items",
+            "order": 59
+        }
+    },
+    "PO": {
+        "subTotal": {
+            "label": "Subtotal",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 0
+        },
+        "totalDiscount": {
+            "label": "Discount",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 1
+        },
+        "totalAmount": {
+            "label": "Total Amount",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 2
+        },
+        "shippingCharges": {
+            "label": "Shipping Charges",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 3
+        },
+        "taxAmount": {
+            "label": "Tax",
+            "isCurrency": true,
+            "groupKey": "Totals",
+            "order": 4
+        },
+        "currency": {
+            "label": "Currency",
+            "groupKey": "Overview",
+            "order": 5
+        },
+        "comments": {
+            "label": "Notes About Invoice",
+            "groupKey": "Overview",
+            "order": 6
+        },
+        "requestorName": {
+            "label": "Requester Name",
+            "groupKey": "Overview",
+            "order": 7
+        },
+        "requestorEmail": {
+            "label": "Requester Email",
+            "groupKey": "Overview",
+            "order": 8
+        },
+        "requestorContact": {
+            "label": "Requester Contact",
+            "groupKey": "Overview",
+            "order": 9
+        },
+        "supplierEmail": {
+            "label": "Supplier Email",
+            "groupKey": "Overview",
+            "order": 10
+        },
+        "reason": {
+            "label": "Reason",
+            "groupKey": "Overview",
+            "order": 11
+        },
+        "supplierAccountNumber": {
+            "label": "Supplier Account #",
+            "groupKey": "Overview",
+            "order": 12
+        },
+        "supplierName": {
+            "label": "Supplier",
+            "groupKey": "Overview",
+            "order": 13
+        },
+        "items": {
+            "label": "Items",
+            "groupKey": "Items",
+            "isHidden": true,
+            "order": 14
+        },
+        "lineItemType": {
+            "label": "Type",
+            "groupKey": "Items",
+            "pipe": "mapTranslation:'line-item-type'",
+            "order": 15
+        },
+        "description": {
+            "label": "Description",
+            "groupKey": "Items",
+            "order": 16
+        },
+        "unitPrice": {
+            "label": "Price",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 17
+        },
+        "qty": {
+            "label": "Quantity",
+            "groupKey": "Items",
+            "order": 18
+        },
+        "uom": {
+            "label": "UoM",
+            "groupKey": "Items",
+            "order": 19
+        },
+        "taxValue": {
+            "label": "Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 20
+        },
+        "supplierTax": {
+            "label": "Supplier Charged Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 21
+        },
+        "useTax": {
+            "label": "Use Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 22
+        },
+        "splitAccountAssignment": {
+            "label": "Split Account Assignment",
+            "groupKey": "Items",
+            "order": 23
+        },
+        "accountInfo": {
+            "isHidden": true,
+            "groupKey": "Items",
+            "order": 24
+        },
+        "glAccount": {
+            "label": "component.line-item-modal.gl_account.lqabel",
+            "groupKey": "Items",
+            "order": 25
+        },
+        "projectRef": {
+            "label": "Project",
+            "groupKey": "Items",
+            "order": 26
+        },
+        "classRef": {
+            "label": "Agent",
+            "groupKey": "Items",
+            "order": 27
+        },
+        "customer": {
+            "label": "Customer",
+            "groupKey": "Items",
+            "order": 28
+        },
+        "accountCategory": {
+            "label": "Acc. Category",
+            "groupKey": "Items",
+            "order": 29
+        },
+        "costCenter": {
+            "label": "Cost Center",
+            "groupKey": "Items",
+            "order": 30
+        },
+        "wbsElement": {
+            "label": "WBS Element",
+            "groupKey": "Items",
+            "order": 31
+        },
+        "internalOrder": {
+            "label": "Internal Order",
+            "groupKey": "Items",
+            "order": 32
+        },
+        "profitCenter": {
+            "label": "Profit Center",
+            "groupKey": "Items",
+            "order": 33
+        },
+        "distributedTotalAmount": {
+            "label": "Dist. Net Amount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 34
+        },
+        "externalTaxCode": {
+            "label": "External Tax Code",
+            "groupKey": "Items",
+            "order": 35
+        },
+        "calculatedTax": {
+            "label": "Calculated Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 36
+        },
+        "plantCode": {
+            "label": "Plant",
+            "groupKey": "Items",
+            "order": 37
+        },
+        "category": {
+            "label": "Category",
+            "groupKey": "Items",
+            "order": 38
+        },
+        "locationRef": {
+            "label": "Branch",
+            "groupKey": "Items",
+            "order": 39
+        },
+        "distributedTax": {
+            "label": "Dist. Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 40
+        },
+        "distributedSupplierTax": {
+            "label": "Dist. Supplier Charged Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 41
+        },
+        "distributedShippingCharges": {
+            "label": "Dist. Shipping Charges",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 42
+        },
+        "distributedDiscountAmount": {
+            "label": "Dist. Discount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 43
+        },
+        "distributedAmount": {
+            "label": "Dist. Amount",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 44
+        },
+        "distributedUseTax": {
+            "label": "Dist. Use Tax",
+            "groupKey": "Items",
+            "isCurrency": true,
+            "order": 45
+        },
+        "locationTypeRef": {
+            "label": "Location Type",
+            "groupKey": "Items",
+            "order": 46
+        },
+        "deliveryDate": {
+            "label": "Invoice Date",
+            "pipe": "vrooDate",
+            "groupKey": "Overview",
+            "order": 47
+        },
+        "validityFrom": {
+            "label": "Validity Period From",
+            "pipe": "vrooDate",
+            "groupKey": "Items",
+            "order": 48
+        },
+        "validityTo": {
+            "label": "Validity Period To",
+            "pipe": "vrooDate",
+            "groupKey": "Items",
+            "order": 49
+        },
+        "manuallyEditedTaxValue": {
+            "label": "Tax",
+            "groupKey": "Items",
+            "order": 50
+        }
+    }
+}

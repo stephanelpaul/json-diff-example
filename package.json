@@ -1,0 +1,10 @@
+{
+  "name": "js",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "diff-json": "^2.0.0",
+    "json-diff": "^0.5.4",
+    "jsondiffpatch": "^0.4.1"
+  }
+}
